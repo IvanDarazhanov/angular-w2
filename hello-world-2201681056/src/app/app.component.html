@@ -1,0 +1,30 @@
+ 
+
+<div class="book-wrapper">
+<button (click)="processPreviousBook()" class="button">Предишна книга</button>
+<div class="book-placeholder">
+  <div class="book-placeholder--title">
+  Title: <input type="text" value={{BookCollection[index].title}}>
+  </div>
+  <div class="book-placeholder--description">
+  Description:<textarea style="width: 300px;" rows="9" [value]="BookCollection[index].description"></textarea>
+  </div>
+  <div class="book-placeholder--author">
+  Author: <input type="text" value={{BookCollection[index].author}}>
+  </div>
+  <div class="book-placeholder--rating">
+   Current rating: <input type="text" value={{BookCollection[index].rating}}>
+  </div>
+  <div class="book-rating-buttons">
+    <button (click)="processRating(1)" class="button">1</button>
+    <button (click)="processRating(2)" class="button">2</button>
+    <button (click)="processRating(3)" class="button">3</button>
+    <button (click)="processRating(4)" class="button">4</button>
+    <button (click)="processRating(5)" class="button">5</button>
+  </div>
+  
+</div>
+<button (click)="processNextBook()" class="button">Следваща книга</button>
+</div>
+  
+

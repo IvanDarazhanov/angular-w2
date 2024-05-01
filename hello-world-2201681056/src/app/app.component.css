@@ -1,0 +1,33 @@
+.button {
+    width: 200px;
+    background: #dedede;
+    border: solid #000 1px;
+}
+
+.book-wrapper{
+    display: flex;
+}
+
+.book-placeholder{
+    width: 300px;
+    border: solid #dedede ;
+    padding: 8px;
+}
+
+.desc-input{
+    width: 300px;
+}
+
+.error{
+    color: red;
+    font-style: bold;
+}
+
+.element{
+    border-bottom: solid gray 2px;
+    margin-bottom: 20px;
+}
+
+.book-rating-buttons{
+    display: flex;
+}
