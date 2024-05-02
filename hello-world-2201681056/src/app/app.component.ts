@@ -14,6 +14,10 @@ export class AppComponent {
 
   public index = 0;
 
+  public modelTitle='';
+  public modelDescription='';
+  public modelAuthor='';
+
   public BookCollection = [
     {
       title: 'Art of War',
@@ -71,8 +75,24 @@ export class AppComponent {
     this.processNextBook();
   }
 
-  processNewData(title,desc){
+  processInputBookTitle(input){
+    this.modelTitle=input.target;
+  }
+  processInputBookDescription(input){
+    this.modelDescription=input.target;
+  }
+  processInputBookAuthor(input){
+    this.modelAuthor=input.target;
+  }
 
+  processNewData(){
+    this.BookCollection[this.index].title=this.modelTitle;
+    this.BookCollection[this.index].description=this.modelDescription;
+    this.BookCollection[this.index].author=this.modelAuthor;
+
+    this.modelTitle='';
+    this.modelDescription='';
+    this.modelAuthor='';
   }
 
 }
