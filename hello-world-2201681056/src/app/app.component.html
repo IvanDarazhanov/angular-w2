@@ -1,6 +1,6 @@
  
 
-<div class="book-wrapper">
+<div class="book-wrapper" id="book-wrapper">
 <button (click)="processPreviousBook()" class="button">Previous book</button>
 <div class="book-placeholder">
 
@@ -16,24 +16,34 @@
   Author: {{BookCollection[index].author}}
   </div>
 
-  
-
   <div class="book-placeholder--rating">
    Current rating: {{BookCollection[index].rating}}
   </div>
+
   <div class="book-rating-buttons">
-    <button (click)="processRating(1)" class="button">1</button>
-    <button (click)="processRating(2)" class="button">2</button>
-    <button (click)="processRating(3)" class="button">3</button>
-    <button (click)="processRating(4)" class="button">4</button>
-    <button (click)="processRating(5)" class="button">5</button>
+    <button (click)="processRating(1)" class="button">&#8902;1</button>
+    <button (click)="processRating(2)" class="button">&#8902;2</button>
+    <button (click)="processRating(3)" class="button">&#8902;3</button>
+    <button (click)="processRating(4)" class="button">&#8902;4</button>
+    <button (click)="processRating(5)" class="button">&#8902;5</button>
   </div>
+  
+  @if(index>=BookCollection.length){
+<div>
+  You rated all of the books<br>
+  <button onclick="continueRating()">I want to rate again</button>
+  <button onclick="hideAll()">No I am fine</button>
+</div>
+}
 </div>
 
 
 <button (click)="processNextBook()" class="button">Next book</button>
+
+
+
 </div>
-<div class="book-placeholder--edit">
+<div class="book-placeholder--edit" id="book-edit">
   <div class="book-placeholder--title">
 
     Title: <input  [(ngModel)]="modelTitle"  type="text" placeholder="Title of book" >
