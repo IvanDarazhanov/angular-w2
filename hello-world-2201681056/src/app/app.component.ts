@@ -48,7 +48,9 @@ export class AppComponent {
 
 
   public processNextBook() {
+
     this.index++;
+
     if (this.index >= this.BookCollection.length) {
       this.index = 0;
     }
@@ -74,17 +76,7 @@ export class AppComponent {
 
     this.processNextBook();
   }
-
-  processInputBookTitle(input){
-    this.modelTitle=input.target;
-  }
-  processInputBookDescription(input){
-    this.modelDescription=input.target;
-  }
-  processInputBookAuthor(input){
-    this.modelAuthor=input.target;
-  }
-
+  
   processNewData(){
     this.BookCollection[this.index].title=this.modelTitle;
     this.BookCollection[this.index].description=this.modelDescription;

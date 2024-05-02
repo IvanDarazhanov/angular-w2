@@ -5,18 +5,18 @@
 <div class="book-placeholder">
 
   <div class="book-placeholder--title">
-  Title: <input  [(ngModel)]="modelTitle" (input)="processInputBookTitle($event)" type="text" name="title" value={{BookCollection[index].title}}>
+  Title: {{BookCollection[index].title}}
   </div>
 
   <div class="book-placeholder--description">
-  Description:<textarea [(ngModel)]="modelDescription" (input)="processInputBookDescription($event)" style="width: 300px;" name="description" rows="9" [value]="BookCollection[index].description"></textarea>
+  Description: {{BookCollection[index].description}}
   </div>
 
   <div class="book-placeholder--author">
-  Author: <input [(ngModel)]="modelAuthor" (input)="processInputBookAuthor($event)" type="text" name="author" value={{BookCollection[index].author}}>
+  Author: {{BookCollection[index].author}}
   </div>
 
-  <button (click)="processNewData()" type="submit">Submit changes</button>
+  
 
   <div class="book-placeholder--rating">
    Current rating: {{BookCollection[index].rating}}
@@ -29,7 +29,28 @@
     <button (click)="processRating(5)" class="button">5</button>
   </div>
 </div>
+
+
 <button (click)="processNextBook()" class="button">Next book</button>
 </div>
-  
+<div class="book-placeholder--edit">
+  <div class="book-placeholder--title">
+
+    Title: <input  [(ngModel)]="modelTitle"  type="text" placeholder="Title of book" >
+
+</div>
+
+<div class="book-placeholder--description">
+
+  Description:<textarea [(ngModel)]="modelDescription" style="width: 300px;"  rows="9" placeholder="Description of book"></textarea>
+
+</div>
+
+<div class="book-placeholder--author">
+
+  Author: <input [(ngModel)]="modelAuthor" type="text" placeholder="Author of book" >
+
+</div>
+</div>
+  <button (click)="processNewData()" type="submit">Submit changes</button>
 
